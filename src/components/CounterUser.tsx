@@ -1,7 +1,7 @@
 import React, { useState, useEffect, JSX } from "react";
 import axios from "axios";
 
-// Define the user type
+
 interface User {
   id: number;
   name: string;
@@ -15,16 +15,16 @@ const CounterUser = (): JSX.Element => {
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
-    // Fetch user based on counter value
+    
     const fetchUser = async () => {
       try {
         const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${counter}`);
         setUser(response.data);
-        setError(""); // Clear previous errors if data is fetched successfully
+        setError(""); 
       } catch (err) {
-        setUser(null);  // Reset user data on error
-        setError("User not found");  // Show "User not found" message
-        console.error(err);  // Optionally log the error
+        setUser(null);  
+        setError("User not found");  
+        console.error(err);  
       }
     };
 

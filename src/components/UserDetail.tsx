@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-// Define the user type
+
 interface User {
   id: number;
   name: string;
@@ -15,9 +15,9 @@ interface User {
 }
 
 const UserDetail = () => {
-  const { userId } = useParams<{ userId: string }>();  // Explicitly typing useParams
+  const { userId } = useParams<{ userId: string }>();  
   const [user, setUser] = useState<User | null>(null);
-  const [error, setError] = useState<string>("");  // State to track errors
+  const [error, setError] = useState<string>("");  
   const navigate = useNavigate();
 
   useEffect(() => {
