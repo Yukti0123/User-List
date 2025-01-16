@@ -1,15 +1,15 @@
-import React, { useEffect, useState, FormEvent } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CounterUser from "./CounterUser";
 import { JSX } from "react";
+import User from "./Interface";
 
-
-interface User {
-  id: number;
-  name: string;
-  email: string;
-}
+// interface User {
+//   id: number;
+//   name: string;
+//   email: string;
+// }
 
 const UserList = ():JSX.Element => {
   const [users, setUsers] = useState<User[]>([]);
@@ -54,7 +54,7 @@ const UserList = ():JSX.Element => {
     <div>
       <h1>User List</h1>
 
-      {error && <div className="error-message" style={{ color: "red" }}>{error}</div>}
+      
 
       <div className="user-list">
         {users.length === 0 ? (
@@ -70,7 +70,7 @@ const UserList = ():JSX.Element => {
           ))
         )}
       </div>
-
+        <br></br>
       <form onSubmit={handleSearch}>
         <div>
           <input
@@ -80,10 +80,15 @@ const UserList = ():JSX.Element => {
             placeholder="Enter User ID"
           />
         </div>
-        <div>
-          <button type="submit">Search User</button>
+        <br></br>
+        <div className="counter-buttons">
+          <button type="submit" className="counter-button">Search User</button>
         </div>
       </form>
+      <br></br>
+      {error && <div className="error-message">{error}</div>}
+
+      <br></br><br></br>
 
       <CounterUser />
     </div>

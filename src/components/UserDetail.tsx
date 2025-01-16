@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import User from "./Interface";
 
-
-interface User {
-  id: number;
-  name: string;
-  email: string;
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-  };
-}
+// interface User {
+//   id: number;
+//   name: string;
+//   email: string;
+//   phone: string;
+//   website: string;
+//   company: {
+//     name: string;
+//   };
+// }
 
 const UserDetail = () => {
   const { userId } = useParams<{ userId: string }>();  
@@ -36,7 +36,7 @@ const UserDetail = () => {
   }, [userId]);
 
   if (error) {
-    return <div className="error-message" style={{ color: "red" }}>{error}</div>;
+    return <div className="error-message" >{error}</div>;
   }
 
   if (!user) {

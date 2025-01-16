@@ -1,13 +1,13 @@
-import React, { useState, useEffect, JSX } from "react";
+import { useState, useEffect, JSX } from "react";
 import axios from "axios";
+import User from "./Interface";
 
-
-interface User {
-  id: number;
-  name: string;
-  email: string;
-  phone: string;
-}
+// interface User {
+//   id: number;
+//   name: string;
+//   email: string;
+//   phone: string;
+// }
 
 const CounterUser = (): JSX.Element => {
   const [counter, setCounter] = useState<number>(1);
@@ -15,16 +15,16 @@ const CounterUser = (): JSX.Element => {
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
-    
+
     const fetchUser = async () => {
       try {
         const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${counter}`);
         setUser(response.data);
-        setError(""); 
+        setError("");
       } catch (err) {
-        setUser(null);  
-        setError("User not found");  
-        console.error(err);  
+        setUser(null);
+        setError("User not found");
+        console.error(err);
       }
     };
 
@@ -54,20 +54,27 @@ const CounterUser = (): JSX.Element => {
       {error && <div className="error-message">{error}</div>}
 
       <div className="counter-buttons">
+      <button className="counter-button" onClick={decrementCounter}>-</button>  
+
+
+        {error ?
+
+          (<div className="error-message">
+            {error}
+          </div>) :
+
+          user ? (
+            <div className="user-card">
+              <h4>Counter: {user.id}</h4>
+              <h4>{user.name}</h4>
+              <h4>Email: {user.email}</h4>
+              <h4>Phone: {user.phone}</h4>
+            </div>
+          ) : (
+            !error && <p>Loading...</p>
+          )}
         <button className="counter-button" onClick={incrementCounter}>+</button>
-
-        {user ? (
-          <div className="user-card">
-            <h4>Counter: {user.id}</h4>
-            <h4>{user.name}</h4>
-            <h4>Email: {user.email}</h4>
-            <h4>Phone: {user.phone}</h4>
-          </div>
-        ) : (
-          !error && <p>Loading...</p>  
-        )}
-
-        <button className="counter-button" onClick={decrementCounter}>-</button>
+        
       </div>
     </div>
   );

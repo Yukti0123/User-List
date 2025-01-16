@@ -59,7 +59,7 @@ button {
   font-size: 18px; 
 }
 
-/* Counter User Styling */
+
 .counter-container {
   text-align: center;
 }
@@ -91,7 +91,10 @@ button {
 .error-message {
   color: red;
   font-size: 16px;
-  margin-top: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .user-card {
