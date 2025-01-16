@@ -1,6 +1,6 @@
 import { useState, useEffect, JSX } from "react";
 import axios from "axios";
-import User from "./Interface";
+import User from "../Interface";
 
 // interface User {
 //   id: number;

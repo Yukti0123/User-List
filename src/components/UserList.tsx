@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CounterUser from "./CounterUser";
 import { JSX } from "react";
-import User from "./Interface";
+import User from "../Interface";
 
 // interface User {
 //   id: number;
