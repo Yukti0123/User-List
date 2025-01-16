@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es5",                             // Target ECMAScript version
+    "lib": ["dom", "dom.iterable", "esnext"],    // Include libraries for React and modern features
+    "jsx": "react-jsx",                         // Configure JSX transformation for React 17 and later
+    "moduleResolution": "node",                 // Enable Node-style module resolution
+    "strict": true,                              // Enable strict type checking options
+    "esModuleInterop": true,                    // Enable compatibility for CommonJS modules
+    "skipLibCheck": true,                       // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true    // Ensure consistent file naming
+  },
+  "include": [
+    "src"  // Include all TypeScript files in the `src` folder
+  ]
+}

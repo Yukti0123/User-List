@@ -58,3 +58,50 @@ button {
 .user-card h2 {
   font-size: 18px; 
 }
+
+/* Counter User Styling */
+.counter-container {
+  text-align: center;
+}
+
+.counter-info {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.counter-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.counter-button {
+  padding: 10px 20px;
+  background-color: #818486;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.counter-button:hover {
+  background-color: #666; /* Optional: Darken button on hover */
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.user-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+}
+
+.user-card h4 {
+  font-size: 16px;
+}
