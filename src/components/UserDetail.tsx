@@ -41,13 +41,13 @@ const UserDetail = () => {
 
   if (!user) {
     return <div>Loading...</div>;  
-  }
+     }
 
   return (
     <div className="user-detail">
       <h1>{user.name}</h1>
       <p>Email: {user.email}</p>
-      <p>Phone: {user.phone}</p>
+        <p>Phone: {user.phone}</p>
       <p>Website: {user.website}</p>
       <p>Company: {user.company.name}</p>
       <button onClick={() => navigate(-1)}>Back</button>

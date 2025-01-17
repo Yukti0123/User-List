@@ -4,18 +4,16 @@ import axios from "axios";
 import CounterUser from "./CounterUser";
 import { JSX } from "react";
 import User from "../Interface";
-
-// interface User {
-//   id: number;
-//   name: string;
-//   email: string;
-// }
+import { useTheme } from "./ThemeContext";
 
 const UserList = ():JSX.Element => {
   const [users, setUsers] = useState<User[]>([]);
   const [searchId, setSearchId] = useState<string>("");
   const [error, setError] = useState<string>("");  
   const navigate = useNavigate();
+
+
+  const {theme, toggleTheme} = useTheme();
 
  
   useEffect(() => {
@@ -52,9 +50,9 @@ const UserList = ():JSX.Element => {
 
   return (
     <div>
-      <h1>User List</h1>
+      <button  onClick={toggleTheme}> Switch To {theme === "light"? "Dark" : "Light"} Mode</button>
 
-      
+      <h1 className="counter-info">User List</h1>
 
       <div className="user-list">
         {users.length === 0 ? (
@@ -62,9 +60,9 @@ const UserList = ():JSX.Element => {
         ) : (
           users.map((user) => (
             <div className="user-card" key={user.id}>
-              <h2>{user.name}</h2>
-              <h2>{user.id}</h2>
-              <p>{user.email}</p>
+              <h4>{user.name}</h4>
+              <h4>{user.id}</h4>
+              <h4>{user.email}</h4>
               <Link to={`/user/${user.id}`}>View Details</Link>
             </div>
           ))

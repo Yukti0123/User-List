@@ -7,24 +7,24 @@ body {
 
 h1 {
   text-align: center; 
-  color: black; 
+  /* color: black;  */
   margin-top: 20px; 
 }
 
 h2 {
   text-align: center; 
-  color: black; 
+  /* color: black;  */
   margin-top: 20px; 
 }
 
 h3 {
   text-align: center; 
-  color: black; 
+  /* color: black;  */
   margin-top: 20px; 
 } 
 h4 {
   text-align: center; 
-  color: black; 
+  /* color: black;  */
   margin-top: 20px; 
 }
 
@@ -36,7 +36,7 @@ form {
 button {
   padding: 10px 20px; 
   background-color: #818486; 
-  color: white; 
+  /* color: white;  */
 }
 
 .user-list {
@@ -48,7 +48,7 @@ button {
 }
 
 .user-card {
-  background-color: white; 
+  /* background-color: white;  */
   border: 1px solid #ddd; 
   padding: 20px; 
   width: 200px; 
@@ -79,7 +79,7 @@ button {
 .counter-button {
   padding: 10px 20px;
   background-color: #818486;
-  color: white;
+  /* color: white; */
   border: none;
   cursor: pointer;
 }
@@ -98,7 +98,7 @@ button {
 }
 
 .user-card {
-  background-color: white;
+  /* background-color: white; */
   border: 1px solid #ddd;
   padding: 20px;
   width: 200px;
@@ -107,4 +107,24 @@ button {
 
 .user-card h4 {
   font-size: 16px;
+}
+
+.app-theme.light h1{
+  background-color: white;
+  color: black;
+}
+
+.app-theme.dark h1{
+  background-color: black;
+  color: white;
+}
+
+.app-theme.light{
+  background-color: white;
+  color: black;
+}
+
+.app-theme.dark{
+  background-color: black;
+  color: white;
 }
